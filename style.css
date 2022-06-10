@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+.logo{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    scale: 100%;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+    background-size: 400%;
+    -webkit-mask: url(logo.png);
+    mask: url(logo.png);
+    -webkit-mask-size: 10%;
+    mask-size: 10%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position-x: 40%;
+    -webkit-mask-position-y: 50%;
+
+    animation: animate 10s linear infinite;
+}
+
+.dog{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    scale: 100%;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+    background-size: 400%;
+    -webkit-mask: url(dog.png);
+    mask: url(dog.png);
+    -webkit-mask-size: 10%;
+    mask-size: 10%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position-x: 60%;
+    -webkit-mask-position-y: 50%;
+    animation: animate 10s linear infinite;
+}
+
+.dot{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    scale: 100%;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+    background-size: 400%;
+    -webkit-mask: url(dot.png);
+    mask: url(dot.png);
+    -webkit-mask-size: 0.4%;
+    mask-size: 1%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position-x: 50%;
+    -webkit-mask-position-y: 50%;
+
+    animation: animate 10s linear infinite;
+}
+
+h1{
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
+    background-size: 400%;
+    font-size: 100px;
+    font-family: Montserrat;
+    letter-spacing: 10px;
+    font-weight: 600;
+    word-spacing: 5px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: block;
+    animation: animate 10s linear infinite;
+}
+@keyframes animate{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
