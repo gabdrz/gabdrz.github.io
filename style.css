@@ -1,127 +1,100 @@
 body{
     margin: 0;
     padding: 0;
-    background: #000;
 }
 
-.logoHover{
+.scene,
+canvas{
     position: fixed;
-    left: 40%;
-    top: 51%;
-    width: 10%;
-    height: auto;
-    opacity: 0%;
-    transform: translate(-40%, -51%);
-    background: #ff0000;
-}
-
-.dogHover{
-    position: fixed;
-    left: 60%;
-    top: 50%;
-    width: 10%;
-    height: auto;
-    opacity: 0%;
-    transform: translate(-60%, -50%);
-    background: #ff0000;
-}
-
-.logo{
-    position: fixed;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    scale: 100%;
-    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
-    background-size: 400%;
-    -webkit-mask: url(logo.png);
-    mask: url(logo.png);
-    -webkit-mask-size: 10% auto;
-    mask-size: 10% auto;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+}
 
-    -webkit-mask-position-x: 40%;
-    -webkit-mask-position-y: 51%;
+.row{
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-    animation: animate 10s linear infinite;
+.gold{
+    background: #D1B269;
+}
+
+.green{
+    background: #62C4AA;
+}
+
+.coffee{
+    background: #9E8262;
+}
+
+.blue{
+    background: #0A192A;
+}
+
+.black{
+    background: #1d2129;
+}
+
+.hello{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 500%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.outline{
+    top: 55%;
+    left: 50%;
+    font-size: 600%;
+    z-index: 2;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #D1B269;
+}
+
+.montserrat{
+    font-family: "Montserrat", sans-serif;
+}
+
+h1{
+    margin: 0%;
 }
 
 .dog{
-    position: fixed;
     width: 100%;
     height: 100%;
     scale: 100%;
-    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
-    background-size: 400%;
-    -webkit-mask: url(dog.png);
-    mask: url(dog.png);
-    -webkit-mask-size: 10% auto;
-    mask-size: 10% auto;
+    background-size: 100%;
+    -webkit-mask: url(../assets/dog.png);
+    mask: url(../assets/dog.png);
+    -webkit-mask-size: 120px auto;
+    mask-size: 8% auto;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+    z-index: 2;
 
-    -webkit-mask-position-x: 60%;
-    -webkit-mask-position-y: 50%;
-
-    animation: animate 10s linear infinite;
+    -webkit-mask-position-x: 20px;
+    -webkit-mask-position-y: 20px;
 }
 
-.dot{
+.firstP{
     position: fixed;
-    width: 100%;
-    height: 100%;
-    scale: 100%;
-    background: linear-gradient(90deg, #ff0000, #ffff00, #ff00f3, #0033ff, #ff00c4, #ff0000);
-    background-size: 400%;
-    -webkit-mask: url(dot.png);
-    mask: url(dot.png);
-    -webkit-mask-size: 0.4% auto;
-    mask-size: 0.4% auto;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position-x: 50%;
-    -webkit-mask-position-y: 50%;
-
-    animation: animate 10s linear infinite;
 }
 
-@media only screen and (max-width: 1200px){
-    .logo{
-        -webkit-mask-size: 20% auto;
-        mask-size: 20% auto;
+.secondP{
+    position: absolute;
+}
 
-        -webkit-mask-position-x: 35%;
-        -webkit-mask-position-y: 50%;
-    }
-    
+@media only screen and (max-width: 700px){
     .dog{
-        -webkit-mask-size: 20% auto;
-        mask-size: 20% auto;
-
-        -webkit-mask-position-x: 68%;
-        -webkit-mask-position-y: 49%;
-    }
-    
-    .dot{
-        -webkit-mask-size: 0.8%;
-        mask-size: 0.8%;
-    }
-
-    .logoHover{
-        left: 35%;
-        top: 50%;
-        width: 20%;
-        height: auto;
-        transform: translate(-35%, -50%);
-    }
-    
-    .dogHover{
-        left: 68%;
-        top: 49%;
-        width: 20%;
-        height: auto;
-        transform: translate(-68%, -49%);
+        -webkit-mask-size: 18% auto;
+        mask-size: 15% auto;
     }
 }
 
