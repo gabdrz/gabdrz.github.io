@@ -1,9 +1,4 @@
 // Variables 
-// var logo = document.getElementsByClassName(".logo");
-// var tweenLogo = gsap.to(".logo", {y:-20, paused: true});
-// var tweenDog = gsap.to(".dog", {y:-20, paused: true});
-//Variables for setup
-
 let container;
 let camera;
 let renderer;
@@ -14,7 +9,7 @@ let image1;
 function init() {
   container = document.querySelector(".scene");
 
-  //Create scene
+  // Create scene
   scene = new THREE.Scene();
 
   const fov = 22;
@@ -22,7 +17,7 @@ function init() {
   const near = 0.1;
   const far = 1000;
 
-  //Camera setup
+  // Camera setup
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.set(0, 5, 30);
 
@@ -33,14 +28,14 @@ function init() {
   light.position.set(50, 50, 100);
   scene.add(light);
 
-  //Renderer
+  // Renderer
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
 
   container.appendChild(renderer.domElement);
 
-  //Load Model
+  // Load Model
   let objLoader = new THREE.GLTFLoader();
   objLoader.load("./assets/logo.gltf", function(gltf) {
     scene.add(gltf.scene);
@@ -51,8 +46,6 @@ function init() {
   });
 }
 
-
-
 function animate() {
   requestAnimationFrame(animate);
   logo.rotation.z += 0.005;
@@ -61,6 +54,8 @@ function animate() {
 }
 
 init();
+
+
 
 function onWindowResize() {
   camera.aspect = container.clientWidth / container.clientHeight;
@@ -71,14 +66,54 @@ function onWindowResize() {
 
 window.addEventListener("resize", onWindowResize);
 
-function logoSwitch () {
-  $('.secondP').each(function() {
-    $(this).css('top',
-      $('.firstP').offset().top -  $(this).closest('.row').offset().top
-    );
-  });
-};
+const floatPath = {
+  curviness: 1.25,
+  autoRotate: true,
+  values: [
+    {x: 100, y:-20},
+    {x: 800, y:-20}
+  ]
+}
 
-$(document).scroll(function() {logoSwitch();});
+const goldToTortoise = TweenMax.to(".dog", 0.5, {css: {background: "#009384"}, ease: Linear.easeNone});
+const tortoiseToGrey = TweenMax.to(".dog", 0.5, {css: {background: "#B4AA99"}, ease: Linear.easeNone});
+const greyToTeal = TweenMax.to(".dog", 0.5, {css: {background: "#39CAB9"}, ease: Linear.easeNone});
+const tealToBrown = TweenMax.to(".dog", 0.5, {css: {background: "#4D4637"}, ease: Linear.easeNone});
 
-logoSwitch();
+const controller = new ScrollMagic.Controller();
+
+const page1 = new ScrollMagic.Scene({
+  triggerElement: ".page2",
+  duration: 140,
+  triggerHook: 0.10909
+})
+.setTween(goldToTortoise)
+.addIndicators()
+.addTo(controller);
+
+const page2 = new ScrollMagic.Scene({
+  triggerElement: ".page3",
+  duration: 140,
+  triggerHook: 0.10909
+})
+.setTween(tortoiseToGrey)
+.addIndicators()
+.addTo(controller);
+
+const page3 = new ScrollMagic.Scene({
+  triggerElement: ".page4",
+  duration: 140,
+  triggerHook: 0.10909
+})
+.setTween(greyToTeal)
+.addIndicators()
+.addTo(controller);
+
+const page4 = new ScrollMagic.Scene({
+  triggerElement: ".page5",
+  duration: 140,
+  triggerHook: 0.10909
+})
+.setTween(tealToBrown)
+.addIndicators()
+.addTo(controller);

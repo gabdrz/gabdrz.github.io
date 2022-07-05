@@ -1,6 +1,14 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     padding: 0;
+}
+
+h1{
+    margin: 0%;
 }
 
 .scene,
@@ -19,24 +27,26 @@ canvas{
     box-sizing: border-box;
 }
 
+/* colors */
+
 .gold{
     background: #D1B269;
 }
 
 .green{
-    background: #62C4AA;
+    background: #009384;
 }
 
 .coffee{
-    background: #9E8262;
+    background: #B4AA99;
 }
 
-.blue{
-    background: #0A192A;
+.red{
+    background: #39CAB9;
 }
 
 .black{
-    background: #1d2129;
+    background: #4D4637;
 }
 
 .hello{
@@ -48,7 +58,9 @@ canvas{
     color: white;
 }
 
-.outline{
+/* outlines */
+
+.outlineGold{
     top: 55%;
     left: 50%;
     font-size: 600%;
@@ -58,13 +70,53 @@ canvas{
     -webkit-text-stroke-color: #D1B269;
 }
 
+.outlineGreen{
+    top: 55%;
+    left: 50%;
+    font-size: 600%;
+    z-index: 2;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #009384;
+}
+
+.outlineCoffee{
+    top: 55%;
+    left: 50%;
+    font-size: 600%;
+    z-index: 2;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #B4AA99;
+}
+
+.outlineRed{
+    top: 55%;
+    left: 50%;
+    font-size: 600%;
+    z-index: 2;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #39CAB9;
+}
+
+.outlineBlack{
+    top: 55%;
+    left: 50%;
+    font-size: 600%;
+    z-index: 2;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #4D4637;
+}
+
+/* fonts */
+
 .montserrat{
     font-family: "Montserrat", sans-serif;
 }
 
-h1{
-    margin: 0%;
-}
+/* objects */
 
 .dog{
     width: 100%;
@@ -87,9 +139,8 @@ h1{
     position: fixed;
 }
 
-.secondP{
-    position: absolute;
-}
+
+/* modifiers */
 
 @media only screen and (max-width: 700px){
     .dog{
