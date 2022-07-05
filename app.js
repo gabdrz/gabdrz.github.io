@@ -88,7 +88,6 @@ const page1 = new ScrollMagic.Scene({
   triggerHook: 0.10909
 })
 .setTween(goldToTortoise)
-.addIndicators()
 .addTo(controller);
 
 const page2 = new ScrollMagic.Scene({
@@ -97,7 +96,6 @@ const page2 = new ScrollMagic.Scene({
   triggerHook: 0.10909
 })
 .setTween(tortoiseToGrey)
-.addIndicators()
 .addTo(controller);
 
 const page3 = new ScrollMagic.Scene({
@@ -106,7 +104,6 @@ const page3 = new ScrollMagic.Scene({
   triggerHook: 0.10909
 })
 .setTween(greyToTeal)
-.addIndicators()
 .addTo(controller);
 
 const page4 = new ScrollMagic.Scene({
@@ -115,5 +112,4 @@ const page4 = new ScrollMagic.Scene({
   triggerHook: 0.10909
 })
 .setTween(tealToBrown)
-.addIndicators()
 .addTo(controller);
