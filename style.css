@@ -5,6 +5,13 @@ html{
 body{
     margin: 0;
     padding: 0;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    overflow-y: scroll; 
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 h1{
@@ -13,10 +20,11 @@ h1{
 
 .scene,
 canvas{
+    margin: 0%;
     position: fixed;
     z-index: 1;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .row{
