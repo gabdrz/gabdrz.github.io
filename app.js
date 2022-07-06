@@ -5,6 +5,46 @@ let renderer;
 let scene;
 let logo;
 let image1;
+let prev;
+let forward;
+
+// Logo Helpers
+let prevRotX1;
+let prevRotY1;
+let prevPosX1;
+let prevPosY1;
+let prevPosZ1;
+
+let prevRotX2;
+let prevRotY2;
+let prevPosX2;
+let prevPosY2;
+let prevPosZ2;
+
+let prevRotX3;
+let prevRotY3;
+let prevPosX3;
+let prevPosY3;
+let prevPosZ3;
+
+// Scroll Pages
+let scrollP1;
+let scrollP2;
+let scrollP3;
+let scrollP4;
+// let scrollP5 = window.pageYOffset - (4 * window.innerHeight);
+
+// Animation Values
+let defaultRSpeed = 0.005;
+let scrollRSpeed = 0.03;
+
+function currentPage() {
+  if (window.pageYOffset < window.innerHeight) return 1;
+  if (window.pageYOffset < 2 * window.innerHeight) return 2;
+  if (window.pageYOffset < 3 * window.innerHeight) return 3;
+  if (window.pageYOffset < 4 * window.innerHeight) return 4;
+  else return 5;
+}
 
 function init() {
   container = document.querySelector(".scene");
@@ -40,16 +80,105 @@ function init() {
   objLoader.load("./assets/logo.gltf", function(gltf) {
     scene.add(gltf.scene);
     logo = gltf.scene.children[0];
-    logo.rotation.y += 0.3;
-    logo.position.y -= 0.5;
     animate();
   });
 }
 
+function moveObject() {
+  // Page 1 Transition
+  if (currentPage() == 1) {
+    logo.rotation.x = (scrollP1 / 8000) + 1.5;
+    logo.rotation.y = (-scrollP1 / 2000) + 0.3;
+    
+    logo.position.x = (scrollP1 / 600) + 0.55;
+    logo.position.y = (scrollP1 / 800) + 2.4; 
+    logo.position.z = (-scrollP1 / 80) + 0.1;
+
+    prevRotX1 = logo.rotation.x;
+    prevRotY1 = logo.rotation.y;
+    prevPosX1 = logo.position.x;
+    prevPosY1 = logo.position.y;
+    prevPosZ1 = logo.position.z;
+  }
+
+  // Page 2 Transition
+  if ( currentPage() == 2) {
+    logo.rotation.x = (scrollP2 / 8000) + prevRotX1;
+    logo.rotation.y = (scrollP2 / 2000) + prevRotY1;
+    
+    logo.position.x = (-scrollP2 / 200) + prevPosX1;
+    logo.position.y = (scrollP2 / 400) + prevPosY1; 
+    logo.position.z = (-scrollP2 / 80) + prevPosZ1;
+
+    prevRotX2 = logo.rotation.x;
+    prevRotY2 = logo.rotation.y;
+    prevPosX2 = logo.position.x;
+    prevPosY2 = logo.position.y;
+    prevPosZ2 = logo.position.z;
+  }
+
+  // Page 3 Transition
+  if (currentPage() == 3) {
+    logo.rotation.x = (scrollP3 / 8000) + prevRotX2;
+    logo.rotation.y = (-scrollP3 / 2000) + prevRotY2;
+    
+    logo.position.x = (scrollP3 / 450) + prevPosX2;
+    logo.position.y = (-scrollP3 / 150) + prevPosY2; 
+    logo.position.z = (scrollP3 / 80) + prevPosZ2;
+
+    prevRotX3 = logo.rotation.x;
+    prevRotY3 = logo.rotation.y;
+    prevPosX3 = logo.position.x;
+    prevPosY3 = logo.position.y;
+    prevPosZ3 = logo.position.z;
+  }
+
+  // Page 4 Transition
+  if (currentPage() == 4) {
+    logo.rotation.x = (-scrollP4 / 3500) + prevRotX3;
+    logo.rotation.y = (scrollP4 / 4100) + prevRotY3;
+    
+    logo.position.x = (scrollP4 / 1500) + prevPosX3;
+    logo.position.y = (scrollP4 / 400) + prevPosY3; 
+    logo.position.z = (scrollP4 / 60) + prevPosZ3;
+  }
+}
+
+function scroll() {
+  scrollP1 = window.pageYOffset;
+  scrollP2 = window.pageYOffset - window.innerHeight;
+  scrollP3 = window.pageYOffset - (2 * window.innerHeight);
+  scrollP4 = window.pageYOffset - (3 * window.innerHeight);
+}
+
 function animate() {
   requestAnimationFrame(animate);
-  logo.rotation.z += 0.005;
-  // image1.rotation.z += 0.005;
+
+  scroll();
+
+  // Object Static Animation
+  const rx = window.pageYOffset / 3000;
+
+  if (rx > prev){
+    logo.rotation.z += scrollRSpeed;
+    forward = true;
+  }
+
+  if (rx < prev){
+    logo.rotation.z -= scrollRSpeed;
+    forward = false;
+  }
+
+  if (forward == false) logo.rotation.z -= defaultRSpeed;
+  else logo.rotation.z += defaultRSpeed;
+
+  prev = rx;
+  
+  // Object Movement
+  moveObject();
+
+
+  // Renderer
   renderer.render(scene, camera);
 }
 
@@ -65,15 +194,6 @@ function onWindowResize() {
 }
 
 window.addEventListener("resize", onWindowResize);
-
-const floatPath = {
-  curviness: 1.25,
-  autoRotate: true,
-  values: [
-    {x: 100, y:-20},
-    {x: 800, y:-20}
-  ]
-}
 
 const goldToTortoise = TweenMax.to(".dog", 0.5, {css: {background: "#009384"}, ease: Linear.easeNone});
 const tortoiseToGrey = TweenMax.to(".dog", 0.5, {css: {background: "#B4AA99"}, ease: Linear.easeNone});

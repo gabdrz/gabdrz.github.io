@@ -38,7 +38,7 @@ canvas{
 }
 
 .coffee{
-    background: #B4AA99;
+    background: #e2d8c8;
 }
 
 .red{
@@ -87,7 +87,7 @@ canvas{
     z-index: 2;
     -webkit-text-stroke-width: 1px;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #B4AA99;
+    -webkit-text-stroke-color: #e2d8c8;
 }
 
 .outlineRed{
