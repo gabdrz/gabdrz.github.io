@@ -184,8 +184,6 @@ function animate() {
 
 init();
 
-
-
 function onWindowResize() {
   camera.aspect = container.clientWidth / container.clientHeight;
   camera.updateProjectionMatrix();
@@ -233,3 +231,19 @@ const page4 = new ScrollMagic.Scene({
 })
 .setTween(tealToBrown)
 .addTo(controller);
+
+// Page 2
+const words = ["Computer Science Senior.", "Code Sensei.", "Front-end Web Developer.", "Freelance Graphic Designer."]
+let cursor = gsap.to('.cursor', {opacity:0, ease: "power2.inOut", repeat:-1})
+let masterTl = gsap.timeline({repeat: -1}).pause()
+let boxTl = gsap.timeline()
+
+  words.forEach(word => {
+  let tl = gsap.timeline({repeat: 1, yoyo: true, repeatDelay:1})
+  tl.to('.text', {duration: 1, text: word})
+  masterTl.add(tl)
+})
+
+masterTl.play()
+
+// Page 3

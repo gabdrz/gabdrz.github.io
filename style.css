@@ -5,13 +5,6 @@ html{
 body{
     margin: 0;
     padding: 0;
-    -ms-overflow-style: none; 
-    scrollbar-width: none;
-    overflow-y: scroll; 
-}
-
-body::-webkit-scrollbar {
-    display: none;
 }
 
 h1{
@@ -57,67 +50,6 @@ canvas{
     background: #4D4637;
 }
 
-.hello{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 500%;
-    transform: translate(-50%, -50%);
-    color: white;
-}
-
-/* outlines */
-
-.outlineGold{
-    top: 55%;
-    left: 50%;
-    font-size: 600%;
-    z-index: 2;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #D1B269;
-}
-
-.outlineGreen{
-    top: 55%;
-    left: 50%;
-    font-size: 600%;
-    z-index: 2;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #009384;
-}
-
-.outlineCoffee{
-    top: 55%;
-    left: 50%;
-    font-size: 600%;
-    z-index: 2;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #e2d8c8;
-}
-
-.outlineRed{
-    top: 55%;
-    left: 50%;
-    font-size: 600%;
-    z-index: 2;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #39CAB9;
-}
-
-.outlineBlack{
-    top: 55%;
-    left: 50%;
-    font-size: 600%;
-    z-index: 2;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #4D4637;
-}
-
 /* fonts */
 
 .montserrat{
@@ -125,8 +57,9 @@ canvas{
 }
 
 /* objects */
-
-.dog{
+/* static */
+.dog {
+    position: fixed;
     width: 100%;
     height: 100%;
     scale: 100%;
@@ -143,8 +76,73 @@ canvas{
     -webkit-mask-position-y: 20px;
 }
 
-.firstP{
-    position: fixed;
+/* page 1 */
+.hello{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    font-size: 500%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.outlineGold{
+    top: 55vh;
+    left: 50vw;
+    font-size: 600%;
+    z-index: 2;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #D1B269;
+}
+
+.devBlog {
+    position: absolute;
+    top: 95vh;
+    left: 2vw;
+    z-index: 3;
+    color: #D1B269;
+}
+
+/* page 2 */
+.box2_1 {
+    position: absolute;
+    font-size: 72px;
+    top: 60vh;
+    left: 15vw;
+    z-index: 2;
+}
+
+.name {
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1;
+}
+
+.a{
+    color: #009384;
+}
+
+.text{
+    color: #009384;
+}
+
+.cursor {
+    color: #009384;
+}
+
+/* page 3 */
+.box3_1 {
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    font-size: 60px;
+    color: white;
+    z-index: 2;
+}
+
+.text2 {
+    color: #e2d8c8;
 }
 
 
