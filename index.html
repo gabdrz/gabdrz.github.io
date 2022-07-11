@@ -13,7 +13,7 @@
             rel="stylesheet"
         >
         <link rel="stylesheet" href="./style.css" />
-        <title> Gsap Scroll </title>
+        <title> Interactive Portfolio </title>
     </head>
 <body>
     <div class="dog gold"></div>
@@ -26,7 +26,7 @@
         <h1 class="hello outlineGold montserrat">
             Hello
         </h1>
-        <h1 class="devBlog montserrat">Dev Blog</h1>
+        <a class="devBlog montserrat" href="https://twitter.com/gabrieljohndrz">Dev Blog</a>
     </section>
 
     <section class="row gold page2">
@@ -43,7 +43,8 @@
            <span>Here's some of my </span> 
            <span class="text2">skills</span>
            <span>:</span>
-        </h1>
+        </h1> 
+        <!-- <div id="graph"></div> -->
     </section>
 
     <section class="row coffee page4">
@@ -61,10 +62,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/EasePack.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="//unpkg.com/force-graph"></script>
     <script src="./three.min.js"></script>
     <script src="./GLTFLoader.js"></script>
     <script src="./FontLoader.js"></script>
     <script src="./TextGeometry.js"></script>
     <script src="./app.js"></script>
+    <script src="./graph.js"></script>
 </body>
 </html>

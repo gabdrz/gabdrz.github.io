@@ -194,7 +194,7 @@ function onWindowResize() {
 window.addEventListener("resize", onWindowResize);
 
 const goldToTortoise = TweenMax.to(".dog", 0.5, {css: {background: "#009384"}, ease: Linear.easeNone});
-const tortoiseToGrey = TweenMax.to(".dog", 0.5, {css: {background: "#B4AA99"}, ease: Linear.easeNone});
+const tortoiseToGrey = TweenMax.to(".dog", 0.5, {css: {background: "#e2d8c8"}, ease: Linear.easeNone});
 const greyToTeal = TweenMax.to(".dog", 0.5, {css: {background: "#39CAB9"}, ease: Linear.easeNone});
 const tealToBrown = TweenMax.to(".dog", 0.5, {css: {background: "#4D4637"}, ease: Linear.easeNone});
 
