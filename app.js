@@ -66,6 +66,7 @@ function init() {
 
   const light = new THREE.DirectionalLight(0xffffff, 2);
   light.position.set(50, 50, 100);
+  light.intensity = 1;
   scene.add(light);
 
   // Renderer
@@ -193,10 +194,15 @@ function onWindowResize() {
 
 window.addEventListener("resize", onWindowResize);
 
-const goldToTortoise = TweenMax.to(".dog", 0.5, {css: {background: "#009384"}, ease: Linear.easeNone});
-const tortoiseToGrey = TweenMax.to(".dog", 0.5, {css: {background: "#e2d8c8"}, ease: Linear.easeNone});
-const greyToTeal = TweenMax.to(".dog", 0.5, {css: {background: "#39CAB9"}, ease: Linear.easeNone});
-const tealToBrown = TweenMax.to(".dog", 0.5, {css: {background: "#4D4637"}, ease: Linear.easeNone});
+// const goldToTortoise = TweenMax.to(".dog", 0.5, {css: {background: "#009384"}, ease: Linear.easeNone});
+// const tortoiseToGrey = TweenMax.to(".dog", 0.5, {css: {background: "#e2d8c8"}, ease: Linear.easeNone});
+// const greyToTeal = TweenMax.to(".dog", 0.5, {css: {background: "#39CAB9"}, ease: Linear.easeNone});
+// const tealToBrown = TweenMax.to(".dog", 0.5, {css: {background: "#4D4637"}, ease: Linear.easeNone});
+
+const goldToTortoise = TweenMax.to(".dog", 0.5, {css: {background: "#ffffff"}, ease: Linear.easeNone});
+const tortoiseToGrey = TweenMax.to(".dog", 0.5, {css: {background: "#ffffff"}, ease: Linear.easeNone});
+const greyToTeal = TweenMax.to(".dog", 0.5, {css: {background: "#ffffff"}, ease: Linear.easeNone});
+const tealToBrown = TweenMax.to(".dog", 0.5, {css: {background: "#ffffff"}, ease: Linear.easeNone});
 
 const controller = new ScrollMagic.Controller();
 
@@ -247,21 +253,6 @@ let boxTl = gsap.timeline()
 masterTl.play()
 
 // Page 3
-const N = 13;
-    const gData = {
-      nodes: [...Array(N).keys()].map(i => ({ id: i })),
-      links: [...Array(N).keys()]
-        .filter(id => id)
-        .map(id => ({
-          source: id,
-          target: Math.round(Math.random() * (id-1))
-        }))
-    };
+       
 
-    const Graph = ForceGraph()
-      (document.getElementById('graph'))
-        .enableZoomInteraction(false)
-        .enablePanInteraction(false)
-        .linkDirectionalParticles(100)
-        .graphData(gData)
-        .nodeRelSize([20]);
+    

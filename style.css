@@ -28,7 +28,7 @@ h1{
 
 /* colors */
 
-.gold{
+/* .gold{
     background: #D1B269;
 }
 
@@ -46,6 +46,26 @@ h1{
 
 .black{
     background: #4D4637;
+} */
+
+.gold{
+    background: #ffffff;
+}
+
+.green{
+    background: #000;
+}
+
+.coffee{
+    background: #000;
+}
+
+.red{
+    background: #000;
+}
+
+.black{
+    background: #000;
 }
 
 /* fonts */
@@ -91,7 +111,8 @@ h1{
     z-index: 2;
     -webkit-text-stroke-width: 1px;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: #D1B269;
+    /* -webkit-text-stroke-color: #D1B269; */
+    -webkit-text-stroke-color: #ffffff;
 }
 
 .devBlog {
@@ -100,7 +121,8 @@ h1{
     top: 95vh;
     left: 2vw;
     z-index: 5;
-    color: #D1B269;
+    /* color: #D1B269; */
+    color: #ffffff;
 }
 a:link{ text-decoration: none; }
 a:visited{ text-decoration: none; }
@@ -124,16 +146,16 @@ a:active{ text-decoration: none; }
 }
 
 .a{
-    color: #009384;
+    color: #000;
 }
 
 .text{
-    color: #009384;
+    color: #000;
     z-index: 3;
 }
 
 .cursor {
-    color: #009384;
+    color: #000;
     z-index: 3;
 }
 
